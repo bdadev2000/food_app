@@ -13,13 +13,14 @@ class ProductCard extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
           borderRadius: BorderRadius.all(Radius.circular(10)),
-          color: Colors.cyan),
+          color: Colors.white),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Image.network(product.urlImage),
           Text(product.title),
           Text(product.subTitle),
+          SizedBox(height: 20,),
           Row(
             mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -27,6 +28,7 @@ class ProductCard extends StatelessWidget {
               Flexible(
                   flex: 1,
                   child: Container(
+                    padding: EdgeInsets.symmetric(vertical: 10,horizontal: 10),
                     decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(4),
@@ -40,6 +42,7 @@ class ProductCard extends StatelessWidget {
               Flexible(
                   flex: 1,
                   child: Container(
+                    height: 30,
                     decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(4),
@@ -47,6 +50,7 @@ class ProductCard extends StatelessWidget {
                         Border.all(width: 1, color: Colors.black)),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         IconButton(
                             onPressed: () {},

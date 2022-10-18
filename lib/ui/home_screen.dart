@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_app/components/drawer_common.dart';
 import 'package:food_app/components/product_card_item.dart';
 import 'package:food_app/model/product.dart';
 
@@ -10,10 +11,12 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: Drawer(),
+      backgroundColor: Colors.grey,
+      drawer: const DrawerCommon(),
       appBar: AppBar(
         backgroundColor: Colors.blue,
         title: Text("Home"),
@@ -95,19 +98,24 @@ class _HomeScreenState extends State<HomeScreen> {
               SizedBox(
                 height: 350,
                 child: ListView.separated(
-                    shrinkWrap: true,
-                    scrollDirection: Axis.horizontal,
-                    itemBuilder: (context,index){
-                  return ProductCard(product: products[index],
-                  );
-                },
-                  separatorBuilder: (context,index){
-                      return SizedBox(width: 20,);
+                  shrinkWrap: true,
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (context, index) {
+                    return ProductCard(
+                      product: products[index],
+                    );
                   },
-                itemCount: products.length,
+                  separatorBuilder: (context, index) {
+                    return SizedBox(
+                      width: 20,
+                    );
+                  },
+                  itemCount: products.length,
                 ),
               ),
-              const SizedBox(height: 20,),
+              const SizedBox(
+                height: 20,
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -123,12 +131,15 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: ListView.separated(
                   shrinkWrap: true,
                   scrollDirection: Axis.horizontal,
-                  itemBuilder: (context,index){
-                    return ProductCard(product: products[index],
+                  itemBuilder: (context, index) {
+                    return ProductCard(
+                      product: products[index],
                     );
                   },
-                  separatorBuilder: (context,index){
-                    return SizedBox(width: 20,);
+                  separatorBuilder: (context, index) {
+                    return SizedBox(
+                      width: 20,
+                    );
                   },
                   itemCount: products.length,
                 ),
@@ -140,5 +151,4 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
-
 

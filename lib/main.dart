@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_app/core/route/routes.dart';
 import 'package:food_app/ui/sign_in.dart';
 import 'package:firebase_core/firebase_core.dart';
 void main()async {
@@ -18,7 +19,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: SignInScreen(),
+      routes: Routes.routes,
+      initialRoute: Routes.productOverviewScreen,
     );
   }
 }
