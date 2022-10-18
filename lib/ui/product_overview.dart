@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:food_app/model/product.dart';
 class ProductOverviewScreen extends StatefulWidget {
-  const ProductOverviewScreen({Key? key}) : super(key: key);
+  final Product product;
+  const ProductOverviewScreen({Key? key, required this.product}) : super(key: key);
 
   @override
   State<ProductOverviewScreen> createState() => _ProductOverviewScreenState();
@@ -20,20 +22,20 @@ class _ProductOverviewScreenState extends State<ProductOverviewScreen> {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text("Fresh Basil"),
-                Text("\$50"),
+                Text(widget.product.title),
+                Text("\$ ${widget.product.price}"),
               ],
             ),
             SizedBox(height: 10,),
             SizedBox(
               width: double.infinity,
-              child: Image.network("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPm72u2K9SEsc6D9GV7cGYYI454iVHHzbXDQ&usqp=CAU",fit: BoxFit.cover,),
+              child: Image.network(widget.product.urlImage,fit: BoxFit.cover,),
             ),
             SizedBox(height: 10,),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text("\$50"),
+                Text("\$ ${widget.product.price}"),
                 ElevatedButton(onPressed: (){}, child: Text("Add")),
               ],
             ),
@@ -41,7 +43,7 @@ class _ProductOverviewScreenState extends State<ProductOverviewScreen> {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text("About product"),
+                Text(widget.product.subTitle),
                 Text("About product"),
               ],
             ),

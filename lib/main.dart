@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       routes: Routes.routes,
-      initialRoute: Routes.productOverviewScreen,
+      initialRoute: Routes.homeScreen,
     );
   }
 }

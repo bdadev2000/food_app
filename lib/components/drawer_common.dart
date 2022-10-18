@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:food_app/core/route/routes.dart';
+
 class DrawerCommon extends StatelessWidget {
   const DrawerCommon({
     Key? key,
@@ -19,7 +21,9 @@ class DrawerCommon extends StatelessWidget {
                   radius: 40,
                   backgroundColor: Colors.red,
                 ),
-                SizedBox(width: 20,),
+                SizedBox(
+                  width: 20,
+                ),
                 Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
@@ -31,16 +35,20 @@ class DrawerCommon extends StatelessWidget {
                   ],
                 ),
               ],
-            ),),
-          ListTile(title: Text("Home"),leading: Icon(Icons.home),),
-          ListTile(title: Text("Review Card"),leading: Icon(Icons.home),),
-          ListTile(title: Text("My Profile"),leading: Icon(Icons.home),),
-          ListTile(title: Text("Notification"),leading: Icon(Icons.home),),
-          ListTile(title: Text("Rating & Review"),leading: Icon(Icons.home),),
-          ListTile(title: Text("Wish List"),leading: Icon(Icons.home),),
-          ListTile(title: Text("Raise a COmplaint"),leading: Icon(Icons.home),),
-          ListTile(title: Text("FAQs"),leading: Icon(Icons.home),),
-
+            ),
+          ),
+          ListTile(title: Text("Home")),
+          ListTile(title: Text("Review Card")),
+          ListTile(
+              title: Text("My Profile"),
+              onTap: () {
+                Navigator.pushNamed(context, Routes.myProfileScreen);
+              }),
+          ListTile(title: Text("Notification")),
+          ListTile(title: Text("Rating & Review")),
+          ListTile(title: Text("Wish List")),
+          ListTile(title: Text("Raise a Complaint")),
+          ListTile(title: Text("FAQs")),
         ],
       ),
     );

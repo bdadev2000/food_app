@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_app/components/drawer_common.dart';
 import 'package:food_app/components/product_card_item.dart';
+import 'package:food_app/core/route/routes.dart';
 import 'package:food_app/model/product.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -11,7 +12,6 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -103,6 +103,11 @@ class _HomeScreenState extends State<HomeScreen> {
                   itemBuilder: (context, index) {
                     return ProductCard(
                       product: products[index],
+                      onTap: () {
+                        Navigator.pushNamed(
+                            context, Routes.productOverviewScreen,
+                            arguments: products[index]);
+                      },
                     );
                   },
                   separatorBuilder: (context, index) {
@@ -134,6 +139,11 @@ class _HomeScreenState extends State<HomeScreen> {
                   itemBuilder: (context, index) {
                     return ProductCard(
                       product: products[index],
+                      onTap: () {
+                        Navigator.pushNamed(
+                            context, Routes.productOverviewScreen,
+                            arguments: products[index]);
+                      },
                     );
                   },
                   separatorBuilder: (context, index) {
@@ -151,4 +161,3 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
-
