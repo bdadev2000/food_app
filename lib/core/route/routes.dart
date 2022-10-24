@@ -3,6 +3,7 @@ import 'package:food_app/model/product.dart';
 import 'package:food_app/ui/home_screen.dart';
 import 'package:food_app/ui/my_profile.dart';
 import 'package:food_app/ui/product_overview.dart';
+import 'package:food_app/ui/search_screen.dart';
 import 'package:food_app/ui/sign_in.dart';
 
 class Routes{
@@ -11,6 +12,7 @@ class Routes{
   static const String homeScreen = '/home_screen';
   static const String productOverviewScreen = '/product_overview_screen';
   static const String myProfileScreen = '/my_profile_screen';
+  static const String searchScreen = '/search_screen';
 
 
   static var routes = {
@@ -21,6 +23,6 @@ class Routes{
       return ProductOverviewScreen(product: args);
     },
     myProfileScreen : (context) => const MyProfileScreen(),
-
+    searchScreen : (context) => const SearchScreen(),
   };
 }

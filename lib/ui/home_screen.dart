@@ -20,6 +20,11 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         backgroundColor: Colors.blue,
         title: Text("Home"),
+        actions: [
+          IconButton(onPressed: (){
+            Navigator.pushNamed(context, Routes.searchScreen);
+          }, icon: Icon(Icons.search))
+        ],
       ),
       body: SingleChildScrollView(
         child: Padding(
